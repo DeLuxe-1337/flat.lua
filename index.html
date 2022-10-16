@@ -1,0 +1,23 @@
+<title>flat.lua framework</title>
+
+<div style="margin-left: 50%;">
+    <h1>
+        flat.lua is loading...
+    </h1>
+</div>
+
+<script src="lua51.js" type="text/javascript"></script>
+
+<script>
+    function executeScript(source) {
+        console.log(fengari.load(source, "web")())
+    }
+
+    function executeFile(path) {
+        fetch("scripts/lua/" + path)
+        .then(Response => Response.text())
+        .then(text => executeScript(text))
+    }
+
+    executeFile("main.lua")
+</script>
