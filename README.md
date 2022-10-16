@@ -2,6 +2,7 @@
 # Flat.lua
 
 Front-end Lua based web framework.
+
 ## Features
 
 - Components
@@ -34,3 +35,6 @@ Contributions are always welcome!
 #
 
 ![issues](https://img.shields.io/github/issues/DeLuxe-1337/flat.lua)
+
+# Community
+[Discord server](https://discord.gg/hUkfRWcdgc)
