@@ -13,7 +13,8 @@ Front-end Lua based web framework.
 
 ## Documentation
 
-[Documentation [WIP]](https://github.com/DeLuxe-1337/FlatLuaDocumentationWebsite)
+[Documentation [WIP]](https://deluxe-1337.github.io/FlatLuaDocumentationWebsite/)
+[Documentation (Source)](https://github.com/DeLuxe-1337/FlatLuaDocumentationWebsite)
 
 
 ## Authors
