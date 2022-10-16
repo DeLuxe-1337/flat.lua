@@ -18,12 +18,15 @@ function module.create(kinda, innera, props)
             flat_kind = kinda,
             innerHTML = innera
         },
+        rendered = false,
         render = function(self)
             if not self.render_index then
                 self.render_index = page.render(self)
             end
 
             self:postrender(self.render_index)
+
+            self.rendered = true
         end,
         postrender = function(self, id)
             local elm = get_element(get_id(id))
@@ -40,6 +43,10 @@ function module.create(kinda, innera, props)
             page.current_page_html[self.render_index] = elm.outerHTML
         end,
         render_child = function(self, child)
+            if not child.rendered then
+                child:render()
+            end
+            
             child = get_element(child.id)
             local elm = get_element(get_id(self.render_index))
             elm:appendChild(child)
