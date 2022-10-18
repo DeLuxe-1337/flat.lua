@@ -17,6 +17,11 @@ Front-end Lua based web framework.
 
 [Documentation (Source)](https://github.com/DeLuxe-1337/FlatLuaDocumentationWebsite/)
 
+## Sandbox to test
+
+[Sandbox [WIP]](https://deluxe-1337.github.io/flat-web-sandbox/)
+
+[Sandbox (Source)](https://github.com/DeLuxe-1337/flat-web-sandbox/)
 
 ## Authors
 
