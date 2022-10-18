@@ -72,7 +72,7 @@ function module.create(kinda, innera, props)
 
     if props then
         for i, v in pairs(props) do
-            result.properties[i] = v
+            result.properties[i:gsub("_", "-")] = v
         end
     end
 
