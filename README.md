@@ -13,7 +13,7 @@ Front-end Lua based web framework.
 - Easy web-development
 - Create websites with only one language
 - Lua based, no need to touch JS
-- You don't need to use CSS or HTML
+- You don't need to use CSS or HTML (Besides the initialization page)
 - Easy components system so you can easily create the same item mulitple times
 - Not bloated, you can still design a lot of the stuff yourself
 - Open source
