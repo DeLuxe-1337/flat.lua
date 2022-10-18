@@ -4,7 +4,7 @@
 Front-end Lua based web framework.
 
 ## Features
-
+- Easy web-development
 - Components
 - Elements created from Lua
 - Easy styling in Lua
