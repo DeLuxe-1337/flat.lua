@@ -51,6 +51,9 @@ function module.create(kinda, innera, props)
             local elm = get_element(get_id(self.render_index))
             elm:appendChild(child)
         end,
+        clear_children = function(self)
+            get_element(get_id(self.render_index)).innerHTML = ""
+        end,
         remove = function(self)
             local elm = get_element(get_id(self.render_index))
             elm:remove()
