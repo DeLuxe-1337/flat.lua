@@ -1,10 +1,20 @@
 local flat = require "flat.require"
 flat.page.load_dom("flat-dom") --loads the custom dom from render/index.html
 
-local element1 = flat.element.create("div")
-element1:render()
+local e1 = flat.element.create("h1", "Hello, world")
+e1:render()
 
+flat.styler.new("Color", {
+    color = "red"
+})
 
-local element2 = flat.element.create("h1", "Hello, world")
---element2:render()
-element1:render_child(element2)
+flat.styler.use("Color", e1)
+
+local e2 = flat.element.create("h1", "Hello, world")
+e2:render()
+
+flat.styler.new({"Margin", "Color"}, {
+    margin_left = "20%"
+})
+
+flat.styler.use("Margin", e2)

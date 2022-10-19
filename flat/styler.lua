@@ -3,8 +3,43 @@ local module = {}
 module.styles = {}
 module.applied = {}
 
-function module.new(name, params, theme)
-    module.styles[name] = params
+local style_metatable = {
+    __add = function (t1, t2)
+        local ret = {}
+        for i, v in pairs(t1) do
+            ret[i] = v
+        end
+
+        for i, v in pairs(t2) do
+            ret[i] = v
+        end
+
+        return ret
+    end,
+}
+
+function module.new(name, params)
+    if type(name) == "string" then
+        module.styles[name] = setmetatable(params, style_metatable)
+    elseif type(name) == "table" then
+        local new_name = name[1]
+        local inherited_params = setmetatable({}, style_metatable)
+
+        for i,v in pairs(name) do
+            if v ~= new_name then
+                local style = module.styles[v]
+                if style then
+                    inherited_params = inherited_params + style
+                end
+            end
+        end
+        
+        inherited_params = inherited_params + setmetatable(params, style_metatable)
+
+        module.styles[new_name] = inherited_params
+    else
+        error("Flat: Failed to create new style " .. tostring(name))
+    end
 end
 
 function module.use(name, element)
